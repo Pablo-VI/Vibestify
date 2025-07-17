@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vibestify Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #0f0f1a;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+      }
+
+      .profile-img {
+        border-radius: 50%;
+        margin: 20px 0;
+        border: 3px solid #7b2cbf;
+      }
+
+      .container {
+        text-align: center;
+        background-color: #1c1c2e;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px #7b2cbf;
+        width: 400px;
+      }
+
+      a {
+        color: #1db954;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TEST -->
+    <p style="color: red">ESTOY EN DASHBOARD.HTML</p>
+
+    <div class="container">
+      <h1>¡Bienvenido a Vibestify!</h1>
+
+      <p><strong>Nombre:</strong> <span th:text="${name}">Nombre</span></p>
+      <p>
+        <strong>Email:</strong>
+        <span th:text="${email}">correo@example.com</span>
+      </p>
+
+      <img
+        th:if="${image}"
+        th:src="${image}"
+        alt="Foto de perfil"
+        width="120"
+        height="120"
+        class="profile-img"
+      />
+
+      <br /><br />
+      <a href="/logout">Cerrar sesión</a>
+    </div>
+  </body>
+</html>
